@@ -1,7 +1,7 @@
 {
   "enabled": true,
-  "active_pack": "peon",
-  "volume": 50,
+  "active_pack": "sc_kerrigan",
+  "volume": 75,
   "pack_rotation": [],
   "pack_rotation_mode": "random",
   "annoyed_threshold": 3,

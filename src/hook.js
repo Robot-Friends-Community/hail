@@ -73,7 +73,8 @@ function main() {
   const volume = config.volumeToFloat(cfg.volume);
   player.play(sound.soundPath, volume);
 
-  process.exit(0);
+  // Give the detached process time to spawn before Node exits
+  setTimeout(() => process.exit(0), 200);
 }
 
 main();
