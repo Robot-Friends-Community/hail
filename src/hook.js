@@ -72,9 +72,6 @@ function main() {
   // Play sound (async, fire-and-forget)
   const volume = config.volumeToFloat(cfg.volume);
   player.play(sound.soundPath, volume);
-
-  // Give the detached process time to spawn before Node exits
-  setTimeout(() => process.exit(0), 200);
 }
 
 main();

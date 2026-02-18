@@ -3,20 +3,13 @@
  * Async, fire-and-forget — never blocks the hook.
  */
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const path = require('path');
 
 const platform = process.platform;
 
-/**
- * Build the PowerShell inline script for Windows audio playback.
- * Embeds path and volume directly in the script (no $args — Node spawn doesn't
- * reliably pass them with -Command).
- */
-function buildWinScript(soundPath, volume) {
-  const fileUri = 'file:///' + soundPath.replace(/\\/g, '/');
-  return `Add-Type -AssemblyName PresentationCore; $p = New-Object System.Windows.Media.MediaPlayer; $p.Open([Uri]::new("${fileUri}")); $p.Volume = ${volume}; Start-Sleep -Milliseconds 150; $p.Play(); $t = 50; while ($t -gt 0 -and $p.Position.TotalMilliseconds -eq 0) { Start-Sleep -Milliseconds 100; $t-- }; if ($p.NaturalDuration.HasTimeSpan) { $r = $p.NaturalDuration.TimeSpan.TotalMilliseconds - $p.Position.TotalMilliseconds; if ($r -gt 0 -and $r -lt 5000) { Start-Sleep -Milliseconds ([int]$r + 100) } } else { Start-Sleep -Seconds 2 }; $p.Close()`;
-}
+/** Path to the Windows playback script */
+const WIN_PLAY_SCRIPT = path.join(__dirname, '..', 'scripts', 'win-play.ps1');
 
 /**
  * Play a sound file asynchronously.
@@ -38,15 +31,14 @@ function play(soundPath, volume = 0.5) {
 }
 
 function playWindows(soundPath, volume) {
-  const child = spawn('powershell.exe', [
-    '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
-    '-Command', buildWinScript(soundPath, volume),
-  ], {
-    detached: true,
-    stdio: 'ignore',
-    windowsHide: true,
-  });
-  child.unref();
+  // Use "cmd /c start /min" to launch an independent minimized PowerShell process.
+  // - Node's spawn with detached:true gets killed when parent exits
+  // - "start /b" (fully hidden) prevents WPF MediaPlayer from accessing audio device
+  // - "start /min" + "-WindowStyle Hidden" = minimized + invisible, audio works
+  execSync(
+    `cmd /c start /min powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "${WIN_PLAY_SCRIPT}" -path "${soundPath}" -vol ${volume}`,
+    { stdio: 'ignore', timeout: 5000, windowsHide: true }
+  );
 }
 
 function playMac(soundPath, volume) {
@@ -87,7 +79,7 @@ function playSync(soundPath, volume = 0.5) {
     if (platform === 'win32') {
       const child = spawn('powershell.exe', [
         '-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
-        '-Command', buildWinScript(soundPath, volume),
+        '-File', WIN_PLAY_SCRIPT, '-path', soundPath, '-vol', String(volume),
       ], { windowsHide: true, stdio: 'ignore' });
       child.on('close', resolve);
       child.on('error', resolve);
