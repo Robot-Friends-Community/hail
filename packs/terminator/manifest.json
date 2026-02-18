@@ -1,0 +1,51 @@
+{
+  "hail_version": "1.0",
+  "name": "terminator",
+  "display_name": "Terminator (T-800)",
+  "description": "Cold, mechanical T-800 voice lines. I'll be back.",
+  "version": "1.0.0",
+  "author": { "name": "team" },
+  "categories": {
+    "session.start": {
+      "sounds": [
+        { "file": "sounds/ill-be-back.mp3", "label": "I'll be back" },
+        { "file": "sounds/system-activated.mp3", "label": "System activated" }
+      ]
+    },
+    "task.acknowledge": {
+      "sounds": [
+        { "file": "sounds/acknowledged.mp3", "label": "Acknowledged" },
+        { "file": "sounds/affirmative-t.mp3", "label": "Affirmative" }
+      ]
+    },
+    "task.complete": {
+      "sounds": [
+        { "file": "sounds/terminated.mp3", "label": "Terminated" },
+        { "file": "sounds/mission-accomplished.mp3", "label": "Mission accomplished" },
+        { "file": "sounds/hasta-la-vista.mp3", "label": "Hasta la vista baby" }
+      ]
+    },
+    "task.error": {
+      "sounds": [
+        { "file": "sounds/system-malfunction.mp3", "label": "System malfunction" },
+        { "file": "sounds/damage-detected.mp3", "label": "Damage detected" }
+      ]
+    },
+    "input.required": {
+      "sounds": [
+        { "file": "sounds/come-with-me.mp3", "label": "Come with me" },
+        { "file": "sounds/your-input.mp3", "label": "Your input is required" }
+      ]
+    },
+    "resource.limit": {
+      "sounds": [
+        { "file": "sounds/power-cell-low.mp3", "label": "Power cell depleting" }
+      ]
+    },
+    "user.spam": {
+      "sounds": [
+        { "file": "sounds/talk-to-the-hand.mp3", "label": "Talk to the hand" }
+      ]
+    }
+  }
+}

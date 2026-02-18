@@ -1,0 +1,52 @@
+{
+  "hail_version": "1.0",
+  "name": "halo",
+  "display_name": "Halo (Master Chief + Cortana)",
+  "description": "Cortana AI companion and Master Chief voice lines. Wake up Chief.",
+  "version": "1.0.0",
+  "author": { "name": "team" },
+  "categories": {
+    "session.start": {
+      "sounds": [
+        { "file": "sounds/wake-up-chief.mp3", "label": "Wake up Chief" },
+        { "file": "sounds/i-need-a-weapon.mp3", "label": "I need a weapon" },
+        { "file": "sounds/lets-go.mp3", "label": "Let's go" }
+      ]
+    },
+    "task.acknowledge": {
+      "sounds": [
+        { "file": "sounds/copy-that.mp3", "label": "Copy that" },
+        { "file": "sounds/affirmative.mp3", "label": "Affirmative" }
+      ]
+    },
+    "task.complete": {
+      "sounds": [
+        { "file": "sounds/mission-complete.mp3", "label": "Mission complete" },
+        { "file": "sounds/job-done-chief.mp3", "label": "Job done Chief" },
+        { "file": "sounds/area-secured.mp3", "label": "Area secured" }
+      ]
+    },
+    "task.error": {
+      "sounds": [
+        { "file": "sounds/we-got-a-problem.mp3", "label": "We got a problem" },
+        { "file": "sounds/shield-down.mp3", "label": "Shields down" }
+      ]
+    },
+    "input.required": {
+      "sounds": [
+        { "file": "sounds/chief-need-you.mp3", "label": "Chief I need you" },
+        { "file": "sounds/awaiting-orders.mp3", "label": "Awaiting orders" }
+      ]
+    },
+    "resource.limit": {
+      "sounds": [
+        { "file": "sounds/low-ammo.mp3", "label": "Running low on ammo" }
+      ]
+    },
+    "user.spam": {
+      "sounds": [
+        { "file": "sounds/easy-spartan.mp3", "label": "Easy Spartan" }
+      ]
+    }
+  }
+}
