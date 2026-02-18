@@ -1,0 +1,24 @@
+{
+  "name": "hail",
+  "version": "1.0.0",
+  "description": "Cross-platform voice notification system for AI coding agents",
+  "main": "src/hook.js",
+  "bin": {
+    "hail": "./bin/hail.js"
+  },
+  "scripts": {
+    "test": "node test/hook.test.js"
+  },
+  "keywords": [
+    "claude-code",
+    "notifications",
+    "voice",
+    "hooks",
+    "sound"
+  ],
+  "author": "team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

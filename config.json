@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "active_pack": "peon",
+  "volume": 50,
+  "pack_rotation": [],
+  "pack_rotation_mode": "random",
+  "annoyed_threshold": 3,
+  "annoyed_window_seconds": 10,
+  "session_ttl_days": 7,
+  "categories": {
+    "session.start": true,
+    "task.acknowledge": true,
+    "task.complete": true,
+    "task.error": true,
+    "input.required": true,
+    "resource.limit": true,
+    "user.spam": true
+  }
+}

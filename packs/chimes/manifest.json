@@ -1,0 +1,50 @@
+{
+  "hail_version": "1.0",
+  "name": "chimes",
+  "display_name": "Chimes (Minimal)",
+  "description": "Pleasant tones and chimes for each event category. Non-voice alternative.",
+  "version": "1.0.0",
+  "author": { "name": "team" },
+  "categories": {
+    "session.start": {
+      "sounds": [
+        { "file": "sounds/start-chime.wav", "label": "Start chime" },
+        { "file": "sounds/welcome-tone.wav", "label": "Welcome tone" }
+      ]
+    },
+    "task.acknowledge": {
+      "sounds": [
+        { "file": "sounds/ack-ping.wav", "label": "Acknowledge ping" },
+        { "file": "sounds/soft-tap.wav", "label": "Soft tap" }
+      ]
+    },
+    "task.complete": {
+      "sounds": [
+        { "file": "sounds/complete-chime.wav", "label": "Complete chime" },
+        { "file": "sounds/success-bell.wav", "label": "Success bell" }
+      ]
+    },
+    "task.error": {
+      "sounds": [
+        { "file": "sounds/error-buzz.wav", "label": "Error buzz" },
+        { "file": "sounds/warning-tone.wav", "label": "Warning tone" }
+      ]
+    },
+    "input.required": {
+      "sounds": [
+        { "file": "sounds/attention-ding.wav", "label": "Attention ding" },
+        { "file": "sounds/input-chime.wav", "label": "Input chime" }
+      ]
+    },
+    "resource.limit": {
+      "sounds": [
+        { "file": "sounds/limit-alert.wav", "label": "Limit alert" }
+      ]
+    },
+    "user.spam": {
+      "sounds": [
+        { "file": "sounds/slow-down.wav", "label": "Slow down tone" }
+      ]
+    }
+  }
+}

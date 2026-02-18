@@ -1,0 +1,57 @@
+{
+  "hail_version": "1.0",
+  "name": "informative",
+  "display_name": "Informative (Professional)",
+  "description": "Clear, pleasant voice notifications for coding events. Pre-generated TTS clips.",
+  "version": "1.0.0",
+  "author": { "name": "team" },
+  "categories": {
+    "session.start": {
+      "sounds": [
+        { "file": "sounds/ready.mp3", "label": "Ready." },
+        { "file": "sounds/lets-go.mp3", "label": "Let's go." },
+        { "file": "sounds/session-started.mp3", "label": "Session started." }
+      ]
+    },
+    "task.acknowledge": {
+      "sounds": [
+        { "file": "sounds/on-it.mp3", "label": "On it." },
+        { "file": "sounds/working-on-that.mp3", "label": "Working on that." },
+        { "file": "sounds/starting.mp3", "label": "Starting." }
+      ]
+    },
+    "task.complete": {
+      "sounds": [
+        { "file": "sounds/done.mp3", "label": "Done." },
+        { "file": "sounds/all-finished.mp3", "label": "All finished." },
+        { "file": "sounds/task-complete.mp3", "label": "Task complete." }
+      ]
+    },
+    "task.error": {
+      "sounds": [
+        { "file": "sounds/something-went-wrong.mp3", "label": "Something went wrong." },
+        { "file": "sounds/error-detected.mp3", "label": "Error detected." },
+        { "file": "sounds/that-didnt-work.mp3", "label": "That didn't work." }
+      ]
+    },
+    "input.required": {
+      "sounds": [
+        { "file": "sounds/need-your-input.mp3", "label": "Need your input." },
+        { "file": "sounds/approval-needed.mp3", "label": "Approval needed." },
+        { "file": "sounds/waiting-on-you.mp3", "label": "Waiting on you." }
+      ]
+    },
+    "resource.limit": {
+      "sounds": [
+        { "file": "sounds/running-low.mp3", "label": "Running low on resources." },
+        { "file": "sounds/limit-reached.mp3", "label": "Limit reached." }
+      ]
+    },
+    "user.spam": {
+      "sounds": [
+        { "file": "sounds/easy-there.mp3", "label": "Easy there." },
+        { "file": "sounds/one-at-a-time.mp3", "label": "One at a time." }
+      ]
+    }
+  }
+}
