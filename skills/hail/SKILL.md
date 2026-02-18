@@ -21,10 +21,10 @@ Run the interactive setup wizard:
 Execute setup by running shell commands:
 ```bash
 # List packs
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" packs
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" packs
 
 # Test a sound
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" test session.start
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" test session.start
 ```
 
 Then use AskUserQuestion to let the user pick options interactively.
@@ -34,13 +34,13 @@ Switch voice pack for the current session. This sets the pack only for this term
 
 The pack name is the argument after "use". Execute:
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" use <pack>
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" use <pack>
 ```
 
 ### `/hail config`
 Show current Hail configuration. Execute:
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" status
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" status
 ```
 
 Present results to the user. Offer to change volume, toggle categories, or switch packs.
@@ -48,7 +48,7 @@ Present results to the user. Offer to change volume, toggle categories, or switc
 ### `/hail browse`
 List all installed packs with their descriptions and sound counts. Execute:
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" packs
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" packs
 ```
 
 For each pack, show:
@@ -58,18 +58,18 @@ For each pack, show:
 
 Offer to test sounds from any pack:
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" use <pack>
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" test task.complete
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" use <pack>
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" test task.complete
 ```
 
 ### Volume Control
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" volume <0-100>
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" volume <0-100>
 ```
 
 ### Toggle On/Off
 ```bash
-node "C:/Dev/_PROJECTS/_SCRIPTS/hail/bin/hail.js" toggle
+node "C:/Dev/_PROJECTS/_SAASY-LABS/SaaSy_DEV/hail/bin/hail.js" toggle
 ```
 
 ## Available Categories
