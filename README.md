@@ -215,8 +215,8 @@ Absolutely. Manifest + sounds folder. See [CONTRIBUTING.md](CONTRIBUTING.md#addi
 ```
  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
  ░                                     ░
- ░   Stop watching the terminal.       ░
- ░   Start listening.             🔊   ░
+ ░   Stop watching your terminal.      ░
+ ░   Start listening to it.       🔊   ░
  ░                                     ░
  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
