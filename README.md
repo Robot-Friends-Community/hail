@@ -1,5 +1,5 @@
 <!--
-╔═[ HAIL  //  VOICE NOTIFICATIONS ]══════════════════════════════════════════╗
+╔═[ HAIL  //  ROBOT FRIENDS COMMUNITY EDITION ]══════════════════════════════╗
 ║                                                                            ║
 ║                        ██╗  ██╗ █████╗ ██╗██╗                              ║
 ║                        ██║  ██║██╔══██╗██║██║                              ║
@@ -15,11 +15,11 @@
 ║               ███████╗██║███████║   ██║   ███████╗██║ ╚████║               ║
 ║               ╚══════╝╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝               ║
 ║                                                                            ║
-╚═[ HAIL  //  VOICE NOTIFICATIONS ]══════════════════════════════════════════╝
+╚═[ HAIL  //  ROBOT FRIENDS COMMUNITY EDITION ]══════════════════════════════╝
 -->
 
 ```
-╔═[ HAIL  //  VOICE NOTIFICATIONS ]══════════════════════════════════════════╗
+╔═[ HAIL  //  ROBOT FRIENDS COMMUNITY EDITION ]══════════════════════════════╗
 ║                                                                            ║
 ║                        ██╗  ██╗ █████╗ ██╗██╗                              ║
 ║                        ██║  ██║██╔══██╗██║██║                              ║
@@ -35,7 +35,7 @@
 ║               ███████╗██║███████║   ██║   ███████╗██║ ╚████║               ║
 ║               ╚══════╝╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝               ║
 ║                                                                            ║
-╚═[ HAIL  //  VOICE NOTIFICATIONS ]══════════════════════════════════════════╝
+╚═[ HAIL  //  ROBOT FRIENDS COMMUNITY EDITION ]══════════════════════════════╝
 ```
 
 ---
@@ -333,22 +333,22 @@ Config file: `config.json` (in the hail root directory)
 
 Pick your personality. All 14 packs ship with the repo.
 
-| Pack | Character / Theme |
-|------|-------------------|
-| `chimes` | Clean, minimal tones. The professional option — neutral enough for any environment. |
-| `informative` | Clear, calm status announcements. No character, just useful audio cues. |
-| `peon` | *"Work work."* The Orc Peon from Warcraft. Grumbling compliance never sounded so relatable. |
-| `peasant` | *"Yes, milord."* The Human Peasant from Warcraft. Eager, obedient, slightly anxious. |
-| `glados` | The passive-aggressive AI from Portal. She'll let you know the task is complete. Somehow it still feels like an insult. |
-| `halo` | Master Chief and Cortana. Mission briefings, combat ready, Spartan discipline. |
-| `terminator` | T-800 from the Terminator films. *"I'll be back."* Cold, efficient, unavoidable. |
-| `dota2_axe` | AXE from Dota 2. Loud, proud, refers to himself in the third person. AXE APPROVES. |
-| `duke_nukem` | Duke Nukem. Hail to the king, baby. Ego-forward notifications for developers who kick butt and chew bubblegum. |
-| `hd2_helldiver` | A Helldiver from Helldivers 2. For Super Earth! Democracy-approved task completion. |
-| `ra2_kirov` | The Kirov Airship from Red Alert 2. *"Kirov reporting."* Soviet efficiency in audio form. |
-| `sc_battlecruiser` | The Battlecruiser from StarCraft. *"Battlecruiser operational."* Requires additional pylons of patience. |
-| `sc_kerrigan` | Sarah Kerrigan, Queen of Blades from StarCraft. Cerebral, commanding, and not particularly interested in your input. |
-| `tf2_engineer` | The Engineer from Team Fortress 2. *"Erectin' a dispenser."* Hard hat, Southern drawl, reliable as his sentry. |
+| Pack | Vibe |
+|------|------|
+| `chimes` | Clean tones. No personality, no friction. The one you use at work. |
+| `informative` | Calm, clear callouts. Like a good PA system — heard but not annoying. |
+| `peon` | *"Work work."* The Orc grunt who just wants to be left alone. Same, honestly. |
+| `peasant` | *"Yes, milord."* Eager. Obedient. Will do absolutely anything you ask. |
+| `glados` | Passive-aggressive AI. Task complete. You're not doing great, by the way. |
+| `halo` | Master Chief. Mission-ready. Every notification feels like a briefing. |
+| `terminator` | Cold. Efficient. *"I'll be back."* It will be back. |
+| `dota2_axe` | AXE IS HERE. AXE COMPLETES TASK. AXE DOES NOT WHISPER. |
+| `duke_nukem` | Hail to the king, baby. Turns every task completion into a victory lap. |
+| `hd2_helldiver` | *For Super Earth!* Democracy-approved audio. Managed democracy. |
+| `ra2_kirov` | *"Kirov reporting."* The Soviet airship has arrived. It is punctual. |
+| `sc_battlecruiser` | *"Battlecruiser operational."* You feel powerful. You should. |
+| `sc_kerrigan` | Queen of Blades. Cerebral, commanding, not here for your feelings. |
+| `tf2_engineer` | *"Erectin' a dispenser."* Southern charm. Hard hat. Gets the job done. |
 
 > **Pro tip:** Set `pack_rotation_mode: "random"` in config.json and add multiple packs
 > to `pack_rotation`. Hail will surprise you each session. One minute it's
