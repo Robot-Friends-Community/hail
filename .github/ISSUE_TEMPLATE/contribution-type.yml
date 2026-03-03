@@ -1,0 +1,22 @@
+name: Contribution Type
+description: What type of contribution is this?
+labels: []
+body:
+  - type: dropdown
+    id: contribution-type
+    attributes:
+      label: Contribution type
+      options:
+        - new voice pack
+        - bug fix
+        - documentation
+        - feature
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true

@@ -5,7 +5,7 @@ Thanks for your interest in contributing to Hail!
 ## Development Setup
 
 ```bash
-git clone https://github.com/saasysoft/hail.git
+git clone https://github.com/Robot-Friends-Community/hail.git
 cd hail
 npm test  # Run tests (no dependencies to install)
 ```
@@ -14,10 +14,10 @@ Hail has **zero npm dependencies** — just Node.js 18+.
 
 ## Branch Strategy
 
-This is a solo-maintained repo. Work happens on `main`.
+This is a community-maintained repo. The branch strategy is `main ← dev ← feature/*`.
 
-- Create feature branches from `main`
-- Open a PR for review before merging
+- Create feature branches from `dev`
+- Open a PR targeting `dev` for review before merging
 - Keep commits focused and well-described
 
 ## Adding a Sound Pack
@@ -70,7 +70,7 @@ This is a solo-maintained repo. Work happens on `main`.
 
 ## Reporting Bugs
 
-Use the [bug report template](https://github.com/saasysoft/hail/issues/new?template=bug_report.yml). Include:
+Use the [bug report template](https://github.com/Robot-Friends-Community/hail/issues/new?template=bug_report.yml). Include:
 - Your OS and Node.js version
 - Steps to reproduce
 - Expected vs actual behavior

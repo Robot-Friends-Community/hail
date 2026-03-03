@@ -1,21 +1,18 @@
-## Description
-<!-- What does this PR do? -->
+## What does this PR do?
 
-## Type of Change
+## Type of change
+- [ ] New voice pack
 - [ ] Bug fix
-- [ ] New feature
-- [ ] New sound pack
-- [ ] Breaking change
 - [ ] Documentation
+- [ ] Feature
+- [ ] Breaking change
 
-## Testing
-<!-- How was this tested? -->
-- [ ] `npm test` passes
-- [ ] `node bin/hail.js test` plays audio
-- [ ] Tested on: Windows / macOS / Linux
+## Testing done
 
 ## Checklist
-- [ ] Code follows project conventions
-- [ ] Self-reviewed
-- [ ] Documentation updated (if needed)
-- [ ] No new dependencies added (or justified)
+- [ ] CHANGELOG.md entry added
+- [ ] No hardcoded paths or credentials
+- [ ] Voice pack follows manifest.json format (if applicable)
+
+## Related issues
+Closes #
