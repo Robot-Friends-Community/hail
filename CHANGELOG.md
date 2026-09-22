@@ -2,6 +2,13 @@
 
 All notable changes to Hail will be documented in this file.
 
+## [1.1.0] - 2026-09-22
+
+### Changed
+- **Hail · Signal Station** — the institution gets promoted. Repo, CLI and commands stay `hail`; the README now opens with the signal-station framing that the seal already carried, restructured in the same plain-language pattern as DoPA / Airport Authority / Customs Authority (what is this → who is it for → install → your first hail → what's inside → how it works), with a lineage section placing Hail in the Robot Friends universe.
+- New hero banner: Frankie404 on-model (brand-kit refs via gpt-image-2), evergreen — no URL, commands or versions baked into the image. `assets/prompts.json` + `assets/generate.py` regenerate it.
+- README de-duplicated (Quickstart and Installation merged; Real-World Use Cases folded into Who is it for).
+
 ## [1.0.0] - 2026-02-17
 
 ### Added

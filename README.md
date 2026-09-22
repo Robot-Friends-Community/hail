@@ -1,32 +1,34 @@
 <div align="center">
 
-<img src="assets/hero.png" alt="Hail — voice alerts for Claude Code. Stop watching, start listening." width="100%">
+<img src="assets/hero.png" alt="Hail · Signal Station — voice alerts for Claude Code. Stop watching, start listening." width="100%">
 
 </div>
-
-
----
 
 <div align="center">
 
-**Your AI agent finished. You heard it because you weren't watching.**
+**Voice alerts for Claude Code. Your agent finished — you heard it, because you weren't watching.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#)
-[![Community](https://img.shields.io/badge/Robot%20Friends-Community-orange?style=flat)](https://github.com/Robot-Friends-Community)
+[![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet?style=for-the-badge)](https://claude.ai/code)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=for-the-badge)](#install)
+[![Community](https://img.shields.io/badge/Robot%20Friends-Community-orange?style=for-the-badge)](https://github.com/Robot-Friends-Community)
 
 </div>
 
 ---
 
-## What Is This?
+## What is this?
 
-You tell your AI coding agent to do something. It takes 30 seconds. Maybe a minute. You alt-tab. You check Slack. You refill your coffee. You come back 4 minutes later to find it's been waiting for a permission prompt for 3 minutes and 47 seconds.
+A signal station sits at the mouth of the harbor and does one job: it calls out. Ship's in. Ship's
+aground. Come look. You don't stand on the pier all day watching the water — the station hails you
+when something happens.
 
-**Sound familiar?**
+**Hail** is the signal station for your Claude Code session.
 
-**Hail** is a voice notification system for AI coding agents. It hooks into [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and plays sounds when stuff happens — so you can actually leave the terminal.
+You tell your agent to do something. It takes thirty seconds, or four minutes. You alt-tab, check
+Slack, refill the coffee — and come back to find it's been sitting on a permission prompt for three
+of those minutes. Hail hooks into Claude Code and **plays a sound when something happens**, so you
+can actually leave the terminal.
 
 ```
   Agent starts working    -->  *chime*
@@ -36,121 +38,110 @@ You tell your AI coding agent to do something. It takes 30 seconds. Maybe a minu
   You spam the prompt     -->  *calm down, buddy*
 ```
 
-It's like a desk bell for your AI. Except instead of a bell, it might be **GLaDOS telling you the task is complete**, or **Master Chief saying "I need a weapon"**, or the **Terminator confirming "Hasta la vista, baby."**
-
-Your choice. We don't judge.
-
----
-
-## Who Is This For?
-
-| Audience | Use Case |
-|----------|----------|
-| Developers using Claude Code | Get notified when long tasks complete without watching the terminal |
-| Power users running multi-step agent workflows | Know exactly when the agent finishes, errors, or needs input |
-| Anyone who context-switches while their AI works | Stop losing time waiting at a terminal that already finished |
-| Streamers / content creators | Add character to your AI coding sessions with iconic voice packs |
-| Teams onboarding with AI agents | Reduce friction for new users who keep missing agent prompts |
+It's a desk bell for your AI. Except the bell might be **GLaDOS telling you the task is complete**,
+**Master Chief saying "I need a weapon"**, or the **Terminator confirming "Hasta la vista, baby."**
+Fourteen voices ship in the box. Your choice. We don't judge.
 
 ---
 
-## Quickstart (2 minutes)
+## Who is it for?
 
-### Prerequisites
+| You are… | Hail gives you… |
+|---|---|
+| **Anyone using Claude Code** | A sound when a long task finishes, so you stop babysitting the terminal |
+| **Running multi-step agent work** | Distinct sounds for done / error / needs-you — you know which without looking |
+| **A chronic alt-tabber** | The minutes back that you currently lose to a prompt that already finished |
+| **A streamer or content creator** | Character. Your agent talks like Duke Nukem. |
+| **Onboarding a team onto agents** | New people stop missing permission prompts on day one |
 
-- **Node.js 18+** ([download](https://nodejs.org))
-- **Claude Code** installed and configured
-- **Audio output** (speakers or headphones — yes, really)
+---
 
-**Platform-specific audio requirements:**
+## Install
 
-| Platform | Required     | Notes                                    |
-|----------|-------------|------------------------------------------|
-| Windows  | PowerShell  | Built-in, uses WPF MediaPlayer           |
-| macOS    | `afplay`    | Built-in on all Macs                     |
-| Linux    | `paplay`    | PulseAudio (most distros) or `aplay`     |
-
-### Install
+You need **Node.js 18+**, **Claude Code**, and something that makes sound. That's it — Hail has
+**zero npm dependencies**, so there's no `npm install`.
 
 ```bash
-# Clone the repo
 git clone https://github.com/Robot-Friends-Community/hail.git
 cd hail
-
-# Register hooks in Claude Code
-node bin/hail.js install
-
-# Hear it work
-node bin/hail.js test
+node bin/hail.js install      # registers the hooks in Claude Code
+node bin/hail.js test         # you should hear something
 ```
 
-That's it. **Zero npm dependencies.** No `npm install` needed.
+`install` does three things: registers Hail's event hooks in `~/.claude/settings.json`, copies the
+`/hail` skill so you get slash commands inside Claude Code, and writes a default `config.json`.
+The hook path is stored as an absolute path to this folder, so put the repo where you want it to
+live *before* you run install.
 
-The `install` command does three things:
-1. Registers event hooks in your Claude Code `~/.claude/settings.json`
-2. Copies the `/hail` skill so you can use slash commands inside Claude Code
-3. Creates a default `config.json` if one doesn't exist
+<details>
+<summary>Platform audio — what Hail uses on each OS</summary>
 
-### Verify
+| Platform | Uses | Notes |
+|---|---|---|
+| Windows | PowerShell + WPF MediaPlayer | Built in — nothing to add |
+| macOS | `afplay` | Built in on every Mac |
+| Linux | `paplay` or `aplay` | PulseAudio on most distros |
+
+</details>
+
+**Updating:** `git pull` in the hail folder. Your `config.json` and any custom packs are kept.
+**Leaving:** `node bin/hail.js uninstall` removes the hooks cleanly and touches nothing else.
+
+---
+
+## Your first hail
 
 ```bash
-node bin/hail.js status
+node bin/hail.js status       # what's on
+node bin/hail.js packs        # who's available
+node bin/hail.js use glados   # pick a voice
+node bin/hail.js toggle       # meeting mode — instant mute (and back)
 ```
 
-You should see:
+Inside Claude Code the same things are `/hail`, `/hail use <pack>`, `/hail toggle`. The
+`/hail use` switch is intercepted by a hook *before* it reaches the model — zero tokens, instant.
 
 ```
 Hail: ENABLED
-  Pack:    chimes
+  Pack:    glados
   Volume:  50%
   Mode:    random
   Hooks:   7 events registered
 ```
 
-### Uninstall
-
-```bash
-node bin/hail.js uninstall
-```
-
-Cleanly removes all hooks from `settings.json`. Your sound packs and config stay untouched.
+> **Pro tip:** put several packs in `pack_rotation` and set `pack_rotation_mode: "random"`.
+> One session it's Cortana, the next it's GLaDOS.
 
 ---
 
-## What's Inside
+## What's inside
 
-Hail ships with **14 voice packs** covering everything from clean professional chimes to iconic characters from Portal, StarCraft, Halo, TF2, and more.
+- **14 voice packs** — clean chimes for the office, iconic characters for everything else
+- **Zero dependencies** — pure Node.js 18+
+- **Cross-platform** — Windows, macOS, Linux
+- **Non-blocking** — audio fires and forgets in ~50 ms; the agent never waits
+- **Configurable** — toggle sound categories, set volume, rotate packs per session
+- **Extensible** — drop in your own pack: a `manifest.json` and some audio files
 
-- **Zero dependencies** — pure Node.js 18+, no `npm install` required
-- **Cross-platform** — Windows, macOS, Linux all supported
-- **Non-blocking** — audio plays fire-and-forget in ~50ms, never stalls the agent
-- **Configurable** — toggle individual sound categories, set volume, rotate packs per session
-- **Extensible** — drop in your own pack with a `manifest.json` and some audio files
+### What triggers what
 
----
-
-## Real-World Use Cases
-
-**1. Long refactors while you grab coffee**
-You kick off a 200-file codebase refactor. Instead of watching a progress bar, you walk away. Halo's Cortana says "I'll do what I can" when the agent starts, and plays a mission-complete fanfare when it finishes. You come back exactly when needed.
-
-**2. Permission prompts you keep missing**
-Claude Code needs to run a shell command but requires your approval. Without Hail, you miss it for 5 minutes. With Hail and the GLaDOS pack, a passive-aggressive AI voice immediately gets your attention.
-
-**3. Multi-agent workflows**
-Running several parallel Claude Code sessions across different terminals? Each session gets a random voice pack assigned at startup (via rotation mode). You know which session is calling for you without looking at the screen.
-
-**4. Spam detection during rapid iterations**
-You're iterating fast, sending 5 prompts in 10 seconds. The `user.spam` category triggers — TF2 Engineer says something appropriately unimpressed. Built-in rate limiting that's actually fun.
-
-**5. Meeting mode**
-You're in a standup but have a long agent task running. `node bin/hail.js toggle` mutes everything instantly. One command back to unmute when you're free.
+| Claude Code event | Hail category | In plain words |
+|---|---|---|
+| `SessionStart` | `session.start` | "I'm awake" |
+| `SubagentStart` | `task.acknowledge` | "On it" |
+| `Stop` | `task.complete` | "Done" (5 s debounce) |
+| `Notification` | `task.complete` | "Done" (skips idle pings) |
+| `PostToolUseFailure` | `task.error` | "Uh oh" |
+| `PermissionRequest` | `input.required` | "Hey, look at me" |
+| `UserPromptSubmit` | `user.spam` | "Chill" (3+ prompts in 10 s) |
 
 ---
 
-## How It Works
+## How it works
 
-Hail registers hooks in Claude Code's `settings.json`. When an event fires, Claude Code pipes JSON to stdin of the hook script. Hail reads it, maps the event to a sound category, picks a random clip (no repeats), and plays it. The whole thing takes ~50ms and never blocks the agent.
+Hail registers hooks in Claude Code's `settings.json`. When an event fires, Claude Code pipes JSON
+to the hook script. Hail reads it, maps the event to a sound category, picks a random clip (no
+repeats), and plays it in a detached process. The whole thing takes ~50 ms and never blocks the agent.
 
 ```
   Claude Code          router           picker          player
@@ -163,59 +154,41 @@ Hail registers hooks in Claude Code's `settings.json`. When an event fires, Clau
        |                  |                |               |
 ```
 
-### Event Routing
-
-| Hook Event          | Category           | Translation              |
-|---------------------|--------------------|--------------------------|
-| `SessionStart`      | `session.start`    | "I'm awake"              |
-| `SubagentStart`     | `task.acknowledge` | "On it"                  |
-| `Stop`              | `task.complete`    | "Done" (5s debounce)     |
-| `Notification`      | `task.complete`    | "Done" (skip idle)       |
-| `PostToolUseFailure`| `task.error`       | "Uh oh"                  |
-| `PermissionRequest` | `input.required`   | "Hey, look at me"        |
-| `UserPromptSubmit`  | `user.spam`        | "Chill" (3+ in 10s)      |
-
 ---
 
-## Installation
+## Voice Packs
 
-### Step 1: Clone
+Pick your personality. All 14 packs ship with the repo.
 
-```bash
-git clone https://github.com/Robot-Friends-Community/hail.git
-cd hail
-```
+| Pack | Vibe |
+|------|------|
+| `chimes` | Clean tones. No personality, no friction. The one you use at work. |
+| `informative` | Calm, clear callouts. Like a good PA system — heard but not annoying. |
+| `peon` | *"Work work."* The Orc grunt who just wants to be left alone. Same, honestly. |
+| `peasant` | *"Yes, milord."* Eager. Obedient. Will do absolutely anything you ask. |
+| `glados` | Passive-aggressive AI. Task complete. You're not doing great, by the way. |
+| `halo` | Master Chief. Mission-ready. Every notification feels like a briefing. |
+| `terminator` | Cold. Efficient. *"I'll be back."* It will be back. |
+| `dota2_axe` | AXE IS HERE. AXE COMPLETES TASK. AXE DOES NOT WHISPER. |
+| `duke_nukem` | Hail to the king, baby. Turns every task completion into a victory lap. |
+| `hd2_helldiver` | *For Super Earth!* Democracy-approved audio. Managed democracy. |
+| `ra2_kirov` | *"Kirov reporting."* The Soviet airship has arrived. It is punctual. |
+| `sc_battlecruiser` | *"Battlecruiser operational."* You feel powerful. You should. |
+| `sc_kerrigan` | Queen of Blades. Cerebral, commanding, not here for your feelings. |
+| `tf2_engineer` | *"Erectin' a dispenser."* Southern charm. Hard hat. Gets the job done. |
 
-### Step 2: Install hooks
+> **Pro tip:** Set `pack_rotation_mode: "random"` in config.json and add multiple packs
+> to `pack_rotation`. Hail will surprise you each session. One minute it's
+> Cortana, the next it's GLaDOS.
 
-```bash
-node bin/hail.js install
-```
+### Creating Your Own Pack
 
-This writes hook entries into `~/.claude/settings.json`. The hook script path is stored as an absolute path to your cloned repo location — so keep the repo wherever you want it long-term before running install.
+See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-sound-pack). TL;DR:
 
-### Step 3: Test audio
-
-```bash
-node bin/hail.js test
-```
-
-Plays a sound from the active pack. If you hear it, you're done.
-
-### Step 4: Pick a voice
-
-```bash
-node bin/hail.js packs        # see what's available
-node bin/hail.js use glados   # pick your personality
-```
-
-### Updating
-
-```bash
-git pull
-```
-
-Your `config.json` and any custom packs are preserved.
+1. Create `packs/my-pack/manifest.json`
+2. Drop `.mp3` files into `packs/my-pack/sounds/`
+3. Map sounds to categories in the manifest
+4. Run `hail use my-pack` and test
 
 ---
 
@@ -296,42 +269,6 @@ Config file: `config.json` (in the hail root directory)
 
 ---
 
-## Voice Packs
-
-Pick your personality. All 14 packs ship with the repo.
-
-| Pack | Vibe |
-|------|------|
-| `chimes` | Clean tones. No personality, no friction. The one you use at work. |
-| `informative` | Calm, clear callouts. Like a good PA system — heard but not annoying. |
-| `peon` | *"Work work."* The Orc grunt who just wants to be left alone. Same, honestly. |
-| `peasant` | *"Yes, milord."* Eager. Obedient. Will do absolutely anything you ask. |
-| `glados` | Passive-aggressive AI. Task complete. You're not doing great, by the way. |
-| `halo` | Master Chief. Mission-ready. Every notification feels like a briefing. |
-| `terminator` | Cold. Efficient. *"I'll be back."* It will be back. |
-| `dota2_axe` | AXE IS HERE. AXE COMPLETES TASK. AXE DOES NOT WHISPER. |
-| `duke_nukem` | Hail to the king, baby. Turns every task completion into a victory lap. |
-| `hd2_helldiver` | *For Super Earth!* Democracy-approved audio. Managed democracy. |
-| `ra2_kirov` | *"Kirov reporting."* The Soviet airship has arrived. It is punctual. |
-| `sc_battlecruiser` | *"Battlecruiser operational."* You feel powerful. You should. |
-| `sc_kerrigan` | Queen of Blades. Cerebral, commanding, not here for your feelings. |
-| `tf2_engineer` | *"Erectin' a dispenser."* Southern charm. Hard hat. Gets the job done. |
-
-> **Pro tip:** Set `pack_rotation_mode: "random"` in config.json and add multiple packs
-> to `pack_rotation`. Hail will surprise you each session. One minute it's
-> Cortana, the next it's GLaDOS.
-
-### Creating Your Own Pack
-
-See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-sound-pack). TL;DR:
-
-1. Create `packs/my-pack/manifest.json`
-2. Drop `.mp3` files into `packs/my-pack/sounds/`
-3. Map sounds to categories in the manifest
-4. Run `hail use my-pack` and test
-
----
-
 ## Hooks and Integration
 
 Hail integrates with Claude Code via its hooks system — no modifications to Claude Code itself required.
@@ -406,7 +343,7 @@ hail/
 
 ---
 
-## Ecosystem and License
+## Platform notes and FAQ
 
 **Platform Support**
 
@@ -444,19 +381,23 @@ Absolutely. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-sound-pack). We gener
 
 ---
 
-<div align="center">
+---
 
-```
-  +--------------------------------------------+
-  |                                            |
-  |   Stop watching your terminal.             |
-  |   Start listening to it.                   |
-  |                                            |
-  +--------------------------------------------+
-```
+## Lineage
 
-**[Robot Friends Community](https://github.com/Robot-Friends-Community)**
+Hail is the **signal station** of the Robot Friends airport-and-harbor universe — the institution
+whose whole mandate is to call out when something happens, so you don't have to keep watch.
+Same universe as [Airport Authority](https://github.com/Robot-Friends-Community/airport-authority)
+(the tower: session continuity), [Baggage Claim](https://github.com/Robot-Friends-Community/baggage-claim)
+(the carousel: the two-command handoff), [Customs Authority](https://github.com/Robot-Friends-Community/customs-authority)
+(the border: the decision layer) and [DoPA](https://github.com/Robot-Friends-Community/dopa)
+(the port: your local dev ports) — institutions with a mandate, so the plumbing is handled and not remembered.
 
-[MIT License](LICENSE) | Zero Dependencies | Node 18+
+Hail's voice packs began life in the open-source *peon-ping* project; Hail rebuilt the engine
+(zero-dependency, cross-platform, hook-native) and added the chimes pack, the `/hail` skill and
+the CLI.
 
-</div>
+## License
+
+MIT © Robot Friends (404NOTFOUND LLC). Character voice packs reference their respective games;
+the chimes pack is ours.
