@@ -383,6 +383,13 @@ Absolutely. See [CONTRIBUTING.md](CONTRIBUTING.md#adding-a-sound-pack). We gener
 
 ---
 
+## Regenerating the banner
+
+`assets/prompts.json` holds the prompt; `python assets/generate.py hero` regenerates it (needs
+`OPENAI_API_KEY` and `pip install requests`). By design the Frankie404 reference images are **not**
+in this repo — they live in the Robot Friends brand kit; drop them into gitignored `assets/_refs/`
+first (the script names the four files it expects).
+
 ## Lineage
 
 Hail is the **signal station** of the Robot Friends airport-and-harbor universe — the institution
