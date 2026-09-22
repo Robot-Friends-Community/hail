@@ -15,7 +15,7 @@ in-session remote control for it.
 node "{{HAIL_DIR}}/bin/hail.js"
 ```
 
-`{{HAIL_DIR}}` is filled in by `node bin/hail.js install` (it points at wherever the hail repo was
+`{{HAIL_DIR}}` is filled in by `node "{{HAIL_DIR}}/bin/hail.js" install` (run from the cloned hail folder as `node bin/hail.js install`) (it points at wherever the hail repo was
 cloned). If you see the literal placeholder, run `install` from the hail folder again. Every
 snippet below uses the full command — `hail` is not on PATH.
 
@@ -33,7 +33,7 @@ snippet below uses the full command — `hail` is not on PATH.
 ### `/hail` or `/hail setup`
 1. List packs: `node "{{HAIL_DIR}}/bin/hail.js" packs`
 2. Let the user pick one (AskUserQuestion)
-3. Test it: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `… test task.complete`
+3. Test it: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `node "{{HAIL_DIR}}/bin/hail.js" test task.complete`
 4. Set volume: `node "{{HAIL_DIR}}/bin/hail.js" volume <0-100>`
 5. Confirm with `node "{{HAIL_DIR}}/bin/hail.js" status`
 
@@ -46,7 +46,7 @@ node "{{HAIL_DIR}}/bin/hail.js" use <pack>
 ```bash
 node "{{HAIL_DIR}}/bin/hail.js" packs
 ```
-Offer to test any pack: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `… test task.complete`.
+Offer to test any pack: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `node "{{HAIL_DIR}}/bin/hail.js" test task.complete`.
 
 ### `/hail config`
 ```bash
