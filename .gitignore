@@ -5,3 +5,5 @@ node_modules/
 # hero regeneration inputs (brand-kit refs) + gpt-image-2 run manifest
 assets/_refs/
 assets/gpt-image-2-manifest.json
+__pycache__/
+*.pyc

@@ -16,8 +16,8 @@ node "{{HAIL_DIR}}/bin/hail.js"
 ```
 
 `{{HAIL_DIR}}` is filled in by `node bin/hail.js install` (it points at wherever the hail repo was
-cloned). If you see the literal placeholder, run `install` from the hail folder again. Abbreviated
-as `hail` below.
+cloned). If you see the literal placeholder, run `install` from the hail folder again. Every
+snippet below uses the full command — `hail` is not on PATH.
 
 ## Triggers
 
@@ -31,44 +31,44 @@ as `hail` below.
 ## Commands
 
 ### `/hail` or `/hail setup`
-1. List packs: `hail packs`
+1. List packs: `node "{{HAIL_DIR}}/bin/hail.js" packs`
 2. Let the user pick one (AskUserQuestion)
-3. Test it: `hail use <pack>` then `hail test task.complete`
-4. Set volume: `hail volume <0-100>`
-5. Confirm with `hail status`
+3. Test it: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `… test task.complete`
+4. Set volume: `node "{{HAIL_DIR}}/bin/hail.js" volume <0-100>`
+5. Confirm with `node "{{HAIL_DIR}}/bin/hail.js" status`
 
 ### `/hail use <pack>`
 ```bash
-hail use <pack>
+node "{{HAIL_DIR}}/bin/hail.js" use <pack>
 ```
 
 ### `/hail browse`
 ```bash
-hail packs
+node "{{HAIL_DIR}}/bin/hail.js" packs
 ```
-Offer to test any pack: `hail use <pack>` then `hail test task.complete`.
+Offer to test any pack: `node "{{HAIL_DIR}}/bin/hail.js" use <pack>` then `… test task.complete`.
 
 ### `/hail config`
 ```bash
-hail status
+node "{{HAIL_DIR}}/bin/hail.js" status
 ```
 Present the result. To change a value the CLI doesn't cover, edit `{{HAIL_DIR}}/config.json`
 with the Edit tool and confirm to the user.
 
 ### `/hail toggle`
 ```bash
-hail toggle
+node "{{HAIL_DIR}}/bin/hail.js" toggle
 ```
 
 ### `/hail volume <0-100>`
 ```bash
-hail volume <0-100>
+node "{{HAIL_DIR}}/bin/hail.js" volume <0-100>
 ```
 
 ### `/hail install` / `/hail uninstall`
 ```bash
-hail install      # register hooks in ~/.claude/settings.json (+ refresh this skill)
-hail uninstall    # remove the hooks; config and packs untouched
+node "{{HAIL_DIR}}/bin/hail.js" install      # register hooks in ~/.claude/settings.json (+ refresh this skill)
+node "{{HAIL_DIR}}/bin/hail.js" uninstall    # remove the hooks; config and packs untouched
 ```
 
 ## Config reference
