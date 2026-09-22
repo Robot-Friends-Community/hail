@@ -9,6 +9,11 @@ All notable changes to Hail will be documented in this file.
 - New hero banner: Frankie404 on-model (brand-kit refs via gpt-image-2), evergreen — no URL, commands or versions baked into the image. `assets/prompts.json` + `assets/generate.py` regenerate it.
 - README de-duplicated (Quickstart and Installation merged; Real-World Use Cases folded into Who is it for).
 
+### Fixed
+- The shipped `/hail` skill hard-coded a developer's local path; it now carries a `{{HAIL_DIR}}` placeholder that `hail install` fills with the real clone location. The stale peon-ping "trainer" section (not part of Hail) is gone.
+- `assets/generate.py` is self-contained (OpenAI edits endpoint via `requests`) instead of shelling out to a private local skill.
+- Shipped `config.json` volume is 50, matching the code default and the docs (was 75).
+
 ## [1.0.0] - 2026-02-17
 
 ### Added

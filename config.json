@@ -1,7 +1,7 @@
 {
   "enabled": true,
   "active_pack": "chimes",
-  "volume": 75,
+  "volume": 50,
   "pack_rotation": [],
   "pack_rotation_mode": "random",
   "annoyed_threshold": 3,
