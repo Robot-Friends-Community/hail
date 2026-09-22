@@ -78,7 +78,7 @@ File: `{{HAIL_DIR}}/config.json`
 | Setting | Type | Default | Description |
 |---|---|---|---|
 | `enabled` | boolean | `true` | Master on/off switch |
-| `active_pack` | string | `"chimes"` | Current sound pack (the shipped config; the code default is `"peon"`) |
+| `active_pack` | string | `"chimes"` | Current sound pack |
 | `volume` | number | `50` | Volume 0–100 |
 | `pack_rotation` | string[] | `[]` | Packs to rotate through (empty = `active_pack` only) |
 | `pack_rotation_mode` | string | `"random"` | `random`, `round-robin`, or `agentskill` (per-session) |

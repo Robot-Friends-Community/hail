@@ -12,7 +12,7 @@ All notable changes to Hail will be documented in this file.
 ### Fixed
 - The shipped `/hail` skill hard-coded a developer's local path; it now carries a `{{HAIL_DIR}}` placeholder that `hail install` fills with the real clone location. The stale peon-ping "trainer" section (not part of Hail) is gone.
 - `assets/generate.py` is self-contained (OpenAI edits endpoint via `requests`) instead of shelling out to a private local skill.
-- Shipped `config.json` volume is 50, matching the code default and the docs (was 75).
+- Shipped `config.json` volume is 50, matching the code default and the docs (was 75); the code default pack is now `chimes` like the shipped config and docs (was `peon`).
 
 ## [1.0.0] - 2026-02-17
 
