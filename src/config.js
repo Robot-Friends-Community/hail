@@ -12,7 +12,7 @@ const CONFIG_PATH = path.join(HAIL_DIR, 'config.json');
 
 const DEFAULTS = {
   enabled: true,
-  active_pack: 'peon',
+  active_pack: 'chimes',
   volume: 50,
   pack_rotation: [],
   pack_rotation_mode: 'random',

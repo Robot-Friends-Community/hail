@@ -1,7 +1,7 @@
 {
   "name": "hail",
-  "version": "1.0.0",
-  "description": "Cross-platform voice notification system for AI coding agents",
+  "version": "1.1.0",
+  "description": "Hail · Signal Station — voice alerts for Claude Code. Cross-platform, zero-dependency notification hooks for AI coding agents.",
   "main": "src/hook.js",
   "bin": {
     "hail": "./bin/hail.js"

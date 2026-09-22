@@ -193,7 +193,11 @@ function installSkill() {
   const destDir = path.dirname(skillDest);
   if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
 
-  fs.copyFileSync(skillSrc, skillDest);
+  // The skill is written with a {{HAIL_DIR}} placeholder; fill in where THIS clone lives
+  // (forward slashes so the path works in bash snippets on every platform).
+  const hailDir = path.resolve(__dirname, '..').replace(/\\/g, '/');
+  const skill = fs.readFileSync(skillSrc, 'utf8').replace(/\{\{HAIL_DIR\}\}/g, hailDir);
+  fs.writeFileSync(skillDest, skill, 'utf8');
   return true;
 }
 
